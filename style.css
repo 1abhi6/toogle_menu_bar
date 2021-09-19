@@ -1,0 +1,151 @@
+
+
+/* CSS Reset */
+
+*{
+    box-sizing: border-box;
+}
+
+body,html{
+    overflow-x: hidden;
+    height: 100%;
+}
+
+body{
+    font-family: 'Varela Round', sans-serif;
+    font-size: 62.5%;
+    margin: 0;
+    padding: 0;
+}
+
+/* Header  */
+
+.header{
+    background-color: rgba(238, 82, 83,1.0);
+    height:5rem;
+    position: fixed;
+    z-index: 10;
+    width:100%;
+}
+
+
+.main{
+    margin-top: 5rem;
+    padding: 1rem 3rem;
+    font-size: 1.7rem;
+}
+
+.sideBarMenu>ul{
+    display: flex;
+    z-index: 10;
+    position: absolute;
+    top:1.5rem;
+    left:1rem;
+}
+.sideBarMenu>ul>li{
+    list-style: none;
+    margin: 0;
+    padding:0;
+}
+
+.sideBarMenu>ul>li>a{
+    font-size: 1.2rem;
+    text-decoration: none;
+    text-transform: uppercase;
+    margin: 0rem 2rem;
+    padding: 1rem 1rem;
+    font-weight: bold;
+    color: #fff;
+    border-radius: .2rem;
+    transition: all .3s ease-in-out;
+}
+.sideBarMenu>ul>li>a:hover{
+    background: #fff;
+    color:rgba(238, 82, 83,1.0);
+}
+
+
+@media(min-width:240px) and (max-width:1545px){
+
+.sideBarMenu{
+    margin-top: 5rem;
+    height:100%;
+    width:20rem;
+    position: fixed;
+    top:0;
+    left:0;
+    transform: translateX(-25rem);
+    transition: transform 250ms ease-in-out;
+    background: rgba(84, 160, 255,1.0);
+}
+
+.sideBarMenu ul{
+    display: block;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    position: relative;
+    left: 0;
+    top:0;
+}
+
+.sideBarMenu ul li{
+    border-bottom: 1px solid rgba(255, 255, 255, 0.10);
+}
+
+.sideBarMenu ul li a{
+    text-decoration: none;
+    color:#fff;
+    font-size: 1.2rem;
+    text-transform: uppercase;
+    font-weight:bold;
+    display: block;
+    margin: 0rem;
+    padding: 1.4rem;
+    border-radius: 0rem;
+    transition:all 350ms ease;
+    text-align: center;
+}
+
+.sideBarMenu ul li a:hover{
+    background: #fff;
+    color:rgba(84, 160, 255,1.0);
+}
+
+#openSidebarMenu:checked ~ .sideBarMenu{
+    transform: translateX(0rem);
+}
+
+.sidebarIconToggle{
+    height:2.2rem;
+    width:2.2rem;
+    position:absolute;
+    top:1.5rem;
+    left:1.5rem;
+    z-index: 20;
+    cursor: pointer;
+}
+
+.spinner{
+    height:.3rem;
+    background: #fff;
+    transition:all .3s ease;
+}
+.middle_spinner,.bottom_spinner{
+    margin-top: .3rem;
+}
+
+#openSidebarMenu:checked ~ .sidebarIconToggle>.middle_spinner{
+    opacity: 0;
+}
+
+#openSidebarMenu:checked ~ .sidebarIconToggle>.top_spinner{
+    transform: rotate(135deg);
+    margin-top: .8rem;
+}
+#openSidebarMenu:checked ~ .sidebarIconToggle>.bottom_spinner{
+    transform: rotate(-135deg);
+    margin-top: -0.9rem;
+
+}
+} 
